@@ -1,0 +1,4 @@
+cohort,n,deaths,auc,brier,oe_ratio,cal_intercept,cal_slope
+MIMIC-IV (apparent),45656,6176,0.736,0.105,1.0,-0.0,1.0
+NWICU (frozen external),10819,1442,0.714,0.106,1.17,-0.031,0.875
+eICU (frozen external),56544,6887,0.736,0.096,0.997,0.066,1.041

@@ -1,0 +1,4 @@
+model,auc,brier
+Base (severity only),0.7957,0.0971
+Base + FI-Lab,0.8058,0.0951
+Increment,0.01,-0.002

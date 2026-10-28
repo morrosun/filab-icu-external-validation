@@ -1,0 +1,3 @@
+study_id,age,sex,ard,ard_disease,ard_icd10,admittime,dischtime,icu_intime,icu_outtime,inhosp_death,mort30,readmit30,icu_los_days,hosp_los_days,albumin,bilirubin_total,bilirubin_direct,bun,calcium,chloride,creatinine,glucose,hematocrit,hemoglobin,lactate,magnesium,phosphate,platelets,potassium,sodium,bicarbonate,aniongap,alt,ast,alp,total_protein,pt,ptt,inr,fibrinogen,ldh,ck,rdw,mcv
+EX001,78,女,1,系统性红斑狼疮 (SLE),M32,2023-03-01,2023-03-15,2023-03-01,2023-03-08,1,1,0,7,14,2.8,1.6,0.4,35,7.8,105,1.8,185,30,9.0,3.2,1.2,5.2,120,3.3,130,20,18,62,70,150,5.0,16,45,1.6,500,300,420,16.0,95
+EX002,71,男,0,,,2023-05-02,2023-05-10,2023-05-02,2023-05-06,0,0,0,4,8,3.8,0.8,0.2,15,9.2,103,1.0,120,40,13.5,1.4,2.0,3.5,220,4.2,140,25,12,25,22,90,6.8,12,32,1.0,300,180,120,13.0,90

@@ -1,0 +1,4 @@
+db,step,n,pct
+MIMIC-IV,老年(>=65)首次ICU住院(每次住院),46566,
+MIMIC-IV,FI-Lab可评估(>=15项)纳入分析,45656,
+MIMIC-IV,因FI不可评估排除,910,2.0%

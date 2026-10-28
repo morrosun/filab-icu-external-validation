@@ -1,0 +1,10 @@
+database,outcome,OR,lo,hi,p
+MIMIC-IV,In-hospital mortality,1.638,1.609,1.666,0.0e+00
+MIMIC-IV,30-day mortality,1.506,1.483,1.529,0.0e+00
+MIMIC-IV,30-day readmission,1.075,1.06,1.089,1.8e-25
+NWICU,In-hospital mortality,1.54,1.485,1.598,6.9e-118
+NWICU,30-day mortality,1.487,1.436,1.54,2.7e-110
+NWICU,30-day readmission,0.995,0.967,1.025,7.4e-01
+MIMIC-IV (+Charlson),In-hospital mortality,1.591,1.563,1.62,0.0e+00
+MIMIC-IV (+Charlson),30-day mortality,1.44,1.417,1.463,0.0e+00
+eICU,In-hospital mortality,1.689,1.661,1.717,0.0e+00

@@ -1,0 +1,57 @@
+{
+  "title": "FI-Lab in older ICU patients: derivation and multi-database external validation (analysis code)",
+  "description": "Analysis code for a study of a laboratory-based frailty index (FI-Lab) in adults aged 65 years or older admitted to an intensive care unit. FI-Lab is a 30-item Rockwood deficit-accumulation index built only from laboratory tests drawn on the first ICU day. The index is derived in MIMIC-IV and transported with frozen coefficients to two independent databases (NWICU and eICU-CRD), with discrimination, calibration slope, calibration-in-the-large and observed-to-expected ratios reported for each. The repository contains the PostgreSQL extraction and statistical pipeline (cohort construction, FI-Lab computation, outcome ascertainment, sequential severity adjustment, frozen-coefficient external validation, calibration and decision-curve analysis, and database audits) together with identifier-free aggregate result tables and the final figures. Patient-level data are not included: MIMIC-IV, eICU-CRD and NWICU are available from PhysioNet to credentialed users under their respective data use agreements.",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "version": "v1.0.0",
+  "language": "eng",
+  "keywords": [
+    "frailty",
+    "FI-Lab",
+    "laboratory frailty index",
+    "older adults",
+    "intensive care",
+    "external validation",
+    "calibration",
+    "MIMIC-IV",
+    "eICU-CRD",
+    "NWICU"
+  ],
+  "creators": [
+    {
+      "name": "Zhong, Yun",
+      "affiliation": "Department of Geriatrics, The Affiliated Huaian No.1 People's Hospital of Nanjing Medical University, Huaian, China",
+      "orcid": "0009-0003-6537-7845"
+    },
+    {
+      "name": "Zhang, Xueqin",
+      "affiliation": "Department of Rheumatology and Immunology, The Affiliated Huaian No.1 People's Hospital of Nanjing Medical University, Huaian, China",
+      "orcid": "0009-0002-4211-3938"
+    },
+    {
+      "name": "Wang, Weimin",
+      "affiliation": "Department of Geriatrics, The Affiliated Huaian No.1 People's Hospital of Nanjing Medical University, Huaian, China",
+      "orcid": "0000-0001-9394-6601"
+    },
+    {
+      "name": "Meng, Deqian",
+      "affiliation": "Department of Rheumatology and Immunology, The Affiliated Huaian No.1 People's Hospital of Nanjing Medical University, Huaian, China",
+      "orcid": "0000-0002-3460-3219"
+    },
+    {
+      "name": "Li, Ju",
+      "affiliation": "Department of Rheumatology and Immunology, The Affiliated Huaian No.1 People's Hospital of Nanjing Medical University, Huaian, China",
+      "orcid": "0000-0002-3297-7903"
+    },
+    {
+      "name": "Wang, Kai",
+      "affiliation": "Department of Rheumatology and Immunology, The Affiliated Huaian No.1 People's Hospital of Nanjing Medical University, Huaian, China",
+      "orcid": "0000-0002-0511-8038"
+    }
+  ],
+  "references": [
+    "Johnson AEW, Bulgarelli L, Shen L, et al. MIMIC-IV, a freely accessible electronic health record dataset. Sci Data. 2023;10:1.",
+    "Pollard TJ, Johnson AEW, Raffa JD, et al. The eICU Collaborative Research Database, a freely available multi-center database for critical care research. Sci Data. 2018;5:180178."
+  ]
+}

@@ -1,0 +1,2 @@
+delta_auc,delta_auc_lo,delta_auc_hi,brier_diff,brier_lo,brier_hi
+0.01,0.0078,0.0122,-0.002,-0.0023,-0.0017

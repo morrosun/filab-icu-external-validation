@@ -1,0 +1,13 @@
+database,subtype,n,deaths,OR,lo,hi,p
+MIMIC-IV,All ARD,2252,311,1.71,1.582,1.849,1.2e-41
+MIMIC-IV,SLE,88,15,1.085,0.732,1.606,6.9e-01
+MIMIC-IV,RA,581,73,1.841,1.556,2.178,1.1e-12
+MIMIC-IV,Vasculitis,124,21,1.738,1.229,2.46,1.8e-03
+NWICU,All ARD,196,15,1.833,1.304,2.579,5.0e-04
+NWICU,SLE,5,0,,,,n<30 or events<5
+NWICU,RA,24,3,,,,n<30 or events<5
+NWICU,Vasculitis,4,1,,,,n<30 or events<5
+eICU,All ARD,881,91,1.719,1.484,1.993,5.9e-13
+eICU,SLE,43,6,1.672,0.782,3.573,1.8e-01
+eICU,RA,95,15,2.368,1.468,3.82,4.1e-04
+eICU,Vasculitis,21,3,,,,n<30 or events<5

@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Pipeline output -- per-patient, must never be committed
+cohort/
+filab/
+analysis/
+out/
+data/
+*.log
+
+# Local environment
+.env
+*.env
+.DS_Store
+Thumbs.db
+
+# Cloud-sync client scratch files
+*.baiduyun.uploading.cfg
+*~$*

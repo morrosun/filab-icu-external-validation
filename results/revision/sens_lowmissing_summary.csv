@@ -1,0 +1,4 @@
+database,n_fi,fi_median,n_assessed_median,q1_mort,q4_mort,corr
+MIMIC-IV,45641,0.421,22,5.2,28.3,0.275
+NWICU,10766,0.389,19,4.5,26.4,0.261
+eICU,56216,0.4,19,3.9,25.8,0.278
