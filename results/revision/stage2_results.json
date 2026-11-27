@@ -1,0 +1,163 @@
+{
+  "stage": "2",
+  "window": "charttime >= ICU intime AND <= intime + 24 h",
+  "cohort": {
+    "parent": 46566,
+    "assessable_0_24": 44771,
+    "assessable_original": 45656,
+    "extraction_seconds": 44.2
+  },
+  "fi_comparison": {
+    "n_common": 44771,
+    "median_original": 0.4231,
+    "median_0_24": 0.4,
+    "pearson_r": 0.9639,
+    "spearman_r": 0.9612,
+    "mean_abs_difference": 0.0279,
+    "identical_fraction": 0.4145,
+    "n_assessed_median_original": 23.0,
+    "n_assessed_median_0_24": 21.0
+  },
+  "models": {
+    "M1": {
+      "or_ci": {
+        "n": 44771,
+        "term": "fi10",
+        "OR": 1.653,
+        "lo": 1.624,
+        "hi": 1.683,
+        "p": 0.0,
+        "auc_apparent": 0.7384,
+        "se_type": "cluster-robust"
+      },
+      "auc": 0.7384,
+      "auc_lo": 0.7312,
+      "auc_hi": 0.7453
+    },
+    "M2": {
+      "or_ci": {
+        "n": 44771,
+        "term": "fi10",
+        "OR": 1.605,
+        "lo": 1.575,
+        "hi": 1.635,
+        "p": 0.0,
+        "auc_apparent": 0.7475,
+        "se_type": "cluster-robust"
+      },
+      "auc": 0.7475,
+      "auc_lo": 0.7406,
+      "auc_hi": 0.7545
+    },
+    "M3": {
+      "or_ci": {
+        "n": 44771,
+        "term": "fi10",
+        "OR": 1.302,
+        "lo": 1.274,
+        "hi": 1.33,
+        "p": 0.0,
+        "auc_apparent": 0.8039,
+        "se_type": "cluster-robust"
+      },
+      "auc": 0.8039,
+      "auc_lo": 0.798,
+      "auc_hi": 0.8101
+    },
+    "M4": {
+      "or_ci": {
+        "n": 44771,
+        "term": "fi10",
+        "OR": 1.299,
+        "lo": 1.271,
+        "hi": 1.328,
+        "p": 0.0,
+        "auc_apparent": 0.8084,
+        "se_type": "cluster-robust"
+      },
+      "auc": 0.8084,
+      "auc_lo": 0.8025,
+      "auc_hi": 0.814
+    }
+  },
+  "incremental": {
+    "n": 44771,
+    "auc_base": 0.7987,
+    "auc_full": 0.8084,
+    "delta_auc": {
+      "delta_auc": 0.0097,
+      "delta_auc_lo": 0.0075,
+      "delta_auc_hi": 0.0119
+    },
+    "delta_brier": {
+      "delta_brier": -0.002,
+      "delta_brier_lo": -0.0024,
+      "delta_brier_hi": -0.0017
+    }
+  },
+  "frozen_coefficients": {
+    "Intercept": -6.642242,
+    "fi10": 0.50281,
+    "age": 0.031551,
+    "male": -0.049796
+  },
+  "frozen_validation": {
+    "mimiciv": {
+      "n": 44771,
+      "deaths": 5882,
+      "auc": 0.7384,
+      "brier": 0.1017,
+      "oe": 1.0,
+      "oe_lo": 0.9748,
+      "oe_hi": 1.0259,
+      "citl": 0.0,
+      "slope": 1.0,
+      "interval_method": "patient-level percentile bootstrap (AUC, CITL, slope); Poisson (O:E)",
+      "auc_lo": 0.7314,
+      "auc_hi": 0.7452,
+      "slope_lo": 0.966,
+      "slope_hi": 1.0352,
+      "citl_lo": -0.0304,
+      "citl_hi": 0.0295,
+      "bootstrap_replicates": 1000
+    },
+    "nwicu": {
+      "n": 10816,
+      "deaths": 1439,
+      "auc": 0.7142,
+      "brier": 0.1061,
+      "oe": 1.1173,
+      "oe_lo": 1.061,
+      "oe_hi": 1.1766,
+      "citl": 0.1408,
+      "slope": 0.8671,
+      "interval_method": "patient-level percentile bootstrap (AUC, CITL, slope); Poisson (O:E)",
+      "auc_lo": 0.6992,
+      "auc_hi": 0.7279,
+      "slope_lo": 0.8012,
+      "slope_hi": 0.9315,
+      "citl_lo": 0.0796,
+      "citl_hi": 0.201,
+      "bootstrap_replicates": 1000
+    },
+    "eicu": {
+      "n": 56544,
+      "deaths": 6887,
+      "auc": 0.7357,
+      "brier": 0.0963,
+      "oe": 0.9543,
+      "oe_lo": 0.932,
+      "oe_hi": 0.9771,
+      "citl": -0.0587,
+      "slope": 1.0294,
+      "interval_method": "patient-level percentile bootstrap (AUC, CITL, slope); Poisson (O:E)",
+      "auc_lo": 0.7299,
+      "auc_hi": 0.7419,
+      "slope_lo": 0.9987,
+      "slope_hi": 1.0617,
+      "citl_lo": -0.086,
+      "citl_hi": -0.0346,
+      "bootstrap_replicates": 1000
+    }
+  }
+}

@@ -1,0 +1,419 @@
+{
+  "stage": "3",
+  "landmark_rule": "hospital observation >=24 h after ICU admission, no death <24 h; outcome = in-hospital death after landmark",
+  "icu_variant_rule": "ICU observation >=24 h after ICU admission, no death <24 h",
+  "cohorts": {
+    "mimiciv": {
+      "fi_assessable": 45656,
+      "early_deaths": 1012,
+      "landmark_hosp_n": 43887,
+      "landmark_hosp_deaths": 5136,
+      "landmark_icu_n": 36831,
+      "landmark_icu_deaths": 4821,
+      "missing_timing": 0
+    },
+    "nwicu": {
+      "fi_assessable": 10816,
+      "early_deaths": 219,
+      "landmark_hosp_n": 10359,
+      "landmark_hosp_deaths": 1219,
+      "landmark_icu_n": 8499,
+      "landmark_icu_deaths": 1154,
+      "missing_timing": 0
+    },
+    "eicu": {
+      "fi_assessable": 56544,
+      "early_deaths": 667,
+      "landmark_hosp_n": 55053,
+      "landmark_hosp_deaths": 6220,
+      "landmark_icu_n": 44100,
+      "landmark_icu_deaths": 5441,
+      "missing_timing": 0
+    }
+  },
+  "original_coefficients": {
+    "Intercept": -6.754951,
+    "fi10": 0.49545,
+    "age": 0.032685,
+    "male": -0.035977
+  },
+  "role_A_sensitivity": {
+    "mimiciv": {
+      "performance": {
+        "n": 43887,
+        "deaths": 5136,
+        "auc": 0.7166,
+        "brier": 0.096,
+        "oe": 0.8796,
+        "oe_lo": 0.8559,
+        "oe_hi": 0.904,
+        "citl": -0.1611,
+        "slope": 0.9113,
+        "interval_method": "patient-level percentile bootstrap (AUC, CITL, slope); Poisson (O:E)",
+        "auc_lo": 0.7094,
+        "auc_hi": 0.7241,
+        "slope_lo": 0.877,
+        "slope_hi": 0.949,
+        "citl_lo": -0.1923,
+        "citl_hi": -0.1292,
+        "bootstrap_replicates": 1000
+      },
+      "local_OR": {
+        "n": 43887,
+        "term": "fi10",
+        "OR": 1.572,
+        "lo": 1.543,
+        "hi": 1.602,
+        "p": 0.0,
+        "auc_apparent": 0.7165,
+        "se_type": "cluster-robust"
+      },
+      "label": "mimiciv"
+    },
+    "nwicu": {
+      "performance": {
+        "n": 10359,
+        "deaths": 1219,
+        "auc": 0.6847,
+        "brier": 0.0988,
+        "oe": 1.0543,
+        "oe_lo": 0.9967,
+        "oe_hi": 1.1152,
+        "citl": 0.0654,
+        "slope": 0.7529,
+        "interval_method": "patient-level percentile bootstrap (AUC, CITL, slope); Poisson (O:E)",
+        "auc_lo": 0.669,
+        "auc_hi": 0.7001,
+        "slope_lo": 0.683,
+        "slope_hi": 0.8219,
+        "citl_lo": 0.0045,
+        "citl_hi": 0.1294,
+        "bootstrap_replicates": 1000
+      },
+      "local_OR": {
+        "n": 10359,
+        "term": "fi10",
+        "OR": 1.471,
+        "lo": 1.42,
+        "hi": 1.525,
+        "p": 0.0,
+        "auc_apparent": 0.6866,
+        "se_type": "cluster-robust"
+      },
+      "label": "nwicu"
+    },
+    "eicu": {
+      "performance": {
+        "n": 55053,
+        "deaths": 6220,
+        "auc": 0.7267,
+        "brier": 0.0917,
+        "oe": 0.9322,
+        "oe_lo": 0.9093,
+        "oe_hi": 0.9557,
+        "citl": -0.0866,
+        "slope": 0.9994,
+        "interval_method": "patient-level percentile bootstrap (AUC, CITL, slope); Poisson (O:E)",
+        "auc_lo": 0.7201,
+        "auc_hi": 0.7335,
+        "slope_lo": 0.9645,
+        "slope_hi": 1.0328,
+        "citl_lo": -0.1156,
+        "citl_hi": -0.0602,
+        "bootstrap_replicates": 1000
+      },
+      "local_OR": {
+        "n": 55053,
+        "term": "fi10",
+        "OR": 1.652,
+        "lo": 1.623,
+        "hi": 1.682,
+        "p": 0.0,
+        "auc_apparent": 0.7267,
+        "se_type": "cluster-robust"
+      },
+      "label": "eicu"
+    }
+  },
+  "role_B_primary": {
+    "hierarchical_models": {
+      "M1": {
+        "or_ci": {
+          "n": 43887,
+          "term": "fi10",
+          "OR": 1.572,
+          "lo": 1.543,
+          "hi": 1.602,
+          "p": 0.0,
+          "auc_apparent": 0.7165,
+          "se_type": "cluster-robust"
+        },
+        "auc": 0.7165,
+        "auc_lo": 0.7089,
+        "auc_hi": 0.7238
+      },
+      "M2": {
+        "or_ci": {
+          "n": 43887,
+          "term": "fi10",
+          "OR": 1.516,
+          "lo": 1.486,
+          "hi": 1.546,
+          "p": 0.0,
+          "auc_apparent": 0.7296,
+          "se_type": "cluster-robust"
+        },
+        "auc": 0.7296,
+        "auc_lo": 0.722,
+        "auc_hi": 0.7368
+      },
+      "M3": {
+        "or_ci": {
+          "n": 43887,
+          "term": "fi10",
+          "OR": 1.262,
+          "lo": 1.234,
+          "hi": 1.291,
+          "p": 0.0,
+          "auc_apparent": 0.787,
+          "se_type": "cluster-robust"
+        },
+        "auc": 0.787,
+        "auc_lo": 0.7804,
+        "auc_hi": 0.7934
+      },
+      "M4": {
+        "or_ci": {
+          "n": 43887,
+          "term": "fi10",
+          "OR": 1.258,
+          "lo": 1.229,
+          "hi": 1.287,
+          "p": 0.0,
+          "auc_apparent": 0.7943,
+          "se_type": "cluster-robust"
+        },
+        "auc": 0.7943,
+        "auc_lo": 0.7876,
+        "auc_hi": 0.8003
+      }
+    },
+    "incremental": {
+      "n": 43887,
+      "auc_base": 0.7862,
+      "auc_full": 0.7943,
+      "delta_auc": {
+        "delta_auc": 0.008,
+        "delta_auc_lo": 0.0058,
+        "delta_auc_hi": 0.0103
+      },
+      "delta_brier": {
+        "delta_brier": -0.0013,
+        "delta_brier_lo": -0.0016,
+        "delta_brier_hi": -0.0011
+      }
+    },
+    "frozen_coefficients": {
+      "Intercept": -6.397121,
+      "fi10": 0.452536,
+      "age": 0.028937,
+      "male": -0.036015
+    },
+    "frozen_validation": {
+      "mimiciv": {
+        "performance": {
+          "n": 43887,
+          "deaths": 5136,
+          "auc": 0.7165,
+          "brier": 0.0955,
+          "oe": 1.0,
+          "oe_lo": 0.973,
+          "oe_hi": 1.0277,
+          "citl": 0.0,
+          "slope": 1.0,
+          "interval_method": "patient-level percentile bootstrap (AUC, CITL, slope); Poisson (O:E)",
+          "auc_lo": 0.709,
+          "auc_hi": 0.7241,
+          "slope_lo": 0.9612,
+          "slope_hi": 1.0428,
+          "citl_lo": -0.0292,
+          "citl_hi": 0.0275,
+          "bootstrap_replicates": 1000
+        },
+        "local_OR": {
+          "n": 43887,
+          "term": "fi10",
+          "OR": 1.572,
+          "lo": 1.543,
+          "hi": 1.602,
+          "p": 0.0,
+          "auc_apparent": 0.7165,
+          "se_type": "cluster-robust"
+        },
+        "label": "mimiciv"
+      },
+      "nwicu": {
+        "performance": {
+          "n": 10359,
+          "deaths": 1219,
+          "auc": 0.6848,
+          "brier": 0.0987,
+          "oe": 1.1863,
+          "oe_lo": 1.1216,
+          "oe_hi": 1.2548,
+          "citl": 0.206,
+          "slope": 0.8265,
+          "interval_method": "patient-level percentile bootstrap (AUC, CITL, slope); Poisson (O:E)",
+          "auc_lo": 0.669,
+          "auc_hi": 0.701,
+          "slope_lo": 0.7513,
+          "slope_hi": 0.9055,
+          "citl_lo": 0.1452,
+          "citl_hi": 0.2653,
+          "bootstrap_replicates": 1000
+        },
+        "local_OR": {
+          "n": 10359,
+          "term": "fi10",
+          "OR": 1.471,
+          "lo": 1.42,
+          "hi": 1.525,
+          "p": 0.0,
+          "auc_apparent": 0.6866,
+          "se_type": "cluster-robust"
+        },
+        "label": "nwicu"
+      },
+      "eicu": {
+        "performance": {
+          "n": 55053,
+          "deaths": 6220,
+          "auc": 0.7267,
+          "brier": 0.0919,
+          "oe": 1.0538,
+          "oe_lo": 1.0279,
+          "oe_hi": 1.0803,
+          "citl": 0.063,
+          "slope": 1.0968,
+          "interval_method": "patient-level percentile bootstrap (AUC, CITL, slope); Poisson (O:E)",
+          "auc_lo": 0.7199,
+          "auc_hi": 0.7339,
+          "slope_lo": 1.0596,
+          "slope_hi": 1.1363,
+          "citl_lo": 0.034,
+          "citl_hi": 0.0909,
+          "bootstrap_replicates": 1000
+        },
+        "local_OR": {
+          "n": 55053,
+          "term": "fi10",
+          "OR": 1.652,
+          "lo": 1.623,
+          "hi": 1.682,
+          "p": 0.0,
+          "auc_apparent": 0.7267,
+          "se_type": "cluster-robust"
+        },
+        "label": "eicu"
+      }
+    }
+  },
+  "icu_variant": {
+    "mimiciv": {
+      "performance": {
+        "n": 36831,
+        "deaths": 4821,
+        "auc": 0.712,
+        "brier": 0.105,
+        "oe": 0.9491,
+        "oe_lo": 0.9227,
+        "oe_hi": 0.9763,
+        "citl": -0.0666,
+        "slope": 0.889,
+        "interval_method": "patient-level percentile bootstrap (AUC, CITL, slope); Poisson (O:E)",
+        "auc_lo": 0.704,
+        "auc_hi": 0.72,
+        "slope_lo": 0.8516,
+        "slope_hi": 0.9278,
+        "citl_lo": -0.099,
+        "citl_hi": -0.0355,
+        "bootstrap_replicates": 1000
+      },
+      "local_OR": {
+        "n": 36831,
+        "term": "fi10",
+        "OR": 1.551,
+        "lo": 1.52,
+        "hi": 1.582,
+        "p": 0.0,
+        "auc_apparent": 0.7122,
+        "se_type": "cluster-robust"
+      },
+      "label": "mimiciv"
+    },
+    "nwicu": {
+      "performance": {
+        "n": 8499,
+        "deaths": 1154,
+        "auc": 0.6715,
+        "brier": 0.1121,
+        "oe": 1.1619,
+        "oe_lo": 1.0967,
+        "oe_hi": 1.2309,
+        "citl": 0.1887,
+        "slope": 0.7011,
+        "interval_method": "patient-level percentile bootstrap (AUC, CITL, slope); Poisson (O:E)",
+        "auc_lo": 0.656,
+        "auc_hi": 0.6881,
+        "slope_lo": 0.6358,
+        "slope_hi": 0.7725,
+        "citl_lo": 0.122,
+        "citl_hi": 0.2563,
+        "bootstrap_replicates": 1000
+      },
+      "local_OR": {
+        "n": 8499,
+        "term": "fi10",
+        "OR": 1.433,
+        "lo": 1.381,
+        "hi": 1.487,
+        "p": 0.0,
+        "auc_apparent": 0.6734,
+        "se_type": "cluster-robust"
+      },
+      "label": "nwicu"
+    },
+    "eicu": {
+      "performance": {
+        "n": 44100,
+        "deaths": 5441,
+        "auc": 0.7028,
+        "brier": 0.1007,
+        "oe": 0.9745,
+        "oe_lo": 0.949,
+        "oe_hi": 1.0008,
+        "citl": -0.0322,
+        "slope": 0.8901,
+        "interval_method": "patient-level percentile bootstrap (AUC, CITL, slope); Poisson (O:E)",
+        "auc_lo": 0.6955,
+        "auc_hi": 0.7101,
+        "slope_lo": 0.8542,
+        "slope_hi": 0.9253,
+        "citl_lo": -0.0642,
+        "citl_hi": -0.0028,
+        "bootstrap_replicates": 1000
+      },
+      "local_OR": {
+        "n": 44100,
+        "term": "fi10",
+        "OR": 1.561,
+        "lo": 1.532,
+        "hi": 1.591,
+        "p": 0.0,
+        "auc_apparent": 0.7029,
+        "se_type": "cluster-robust"
+      },
+      "label": "eicu"
+    }
+  }
+}

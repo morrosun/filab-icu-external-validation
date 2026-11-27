@@ -1,0 +1,278 @@
+{
+  "stage": "1",
+  "analyses": [
+    "n_assessed covariate",
+    "14/14 panel",
+    "eICU APACHE IV sensitivity"
+  ],
+  "n_assessed": {
+    "mimiciv": {
+      "base_model": {
+        "n": 45656,
+        "term": "fi10",
+        "OR": 1.641,
+        "lo": 1.612,
+        "hi": 1.671,
+        "p": 0.0,
+        "auc_apparent": 0.736,
+        "se_type": "cluster-robust"
+      },
+      "adjusted_model": {
+        "n": 45656,
+        "term": "fi10",
+        "OR": 1.537,
+        "lo": 1.509,
+        "hi": 1.565,
+        "p": 0.0,
+        "auc_apparent": 0.7504,
+        "se_type": "cluster-robust"
+      },
+      "n_assessed_OR_per_item": 1.115,
+      "n_assessed_lo": 1.105,
+      "n_assessed_hi": 1.126,
+      "n_assessed_OR_per_5_items": 1.726,
+      "n_assessed_per5_lo": 1.644,
+      "n_assessed_per5_hi": 1.812,
+      "n_assessed_p": 0.0,
+      "fi10_OR_change_pct": -6.34
+    },
+    "nwicu": {
+      "base_model": {
+        "n": 10816,
+        "term": "fi10",
+        "OR": 1.565,
+        "lo": 1.513,
+        "hi": 1.619,
+        "p": 0.0,
+        "auc_apparent": 0.7158,
+        "se_type": "cluster-robust"
+      },
+      "adjusted_model": {
+        "n": 10816,
+        "term": "fi10",
+        "OR": 1.506,
+        "lo": 1.455,
+        "hi": 1.559,
+        "p": 0.0,
+        "auc_apparent": 0.727,
+        "se_type": "cluster-robust"
+      },
+      "n_assessed_OR_per_item": 1.094,
+      "n_assessed_lo": 1.075,
+      "n_assessed_hi": 1.113,
+      "n_assessed_OR_per_5_items": 1.565,
+      "n_assessed_per5_lo": 1.437,
+      "n_assessed_per5_hi": 1.704,
+      "n_assessed_p": 0.0,
+      "fi10_OR_change_pct": -3.77
+    },
+    "eicu": {
+      "base_model": {
+        "n": 56544,
+        "term": "fi10",
+        "OR": 1.689,
+        "lo": 1.661,
+        "hi": 1.718,
+        "p": 0.0,
+        "auc_apparent": 0.7357,
+        "se_type": "cluster-robust"
+      },
+      "adjusted_model": {
+        "n": 56544,
+        "term": "fi10",
+        "OR": 1.638,
+        "lo": 1.61,
+        "hi": 1.666,
+        "p": 0.0,
+        "auc_apparent": 0.7432,
+        "se_type": "cluster-robust"
+      },
+      "n_assessed_OR_per_item": 1.079,
+      "n_assessed_lo": 1.071,
+      "n_assessed_hi": 1.087,
+      "n_assessed_OR_per_5_items": 1.462,
+      "n_assessed_per5_lo": 1.409,
+      "n_assessed_per5_hi": 1.516,
+      "n_assessed_p": 0.0,
+      "fi10_OR_change_pct": -3.02
+    }
+  },
+  "panel_14of14": {
+    "mimiciv": {
+      "n": 41751,
+      "deaths": 5807,
+      "local_OR": {
+        "n": 41751,
+        "term": "fi10",
+        "OR": 1.475,
+        "lo": 1.453,
+        "hi": 1.499,
+        "p": 0.0,
+        "auc_apparent": 0.716,
+        "se_type": "cluster-robust"
+      },
+      "frozen": {
+        "n": 41751,
+        "deaths": 5807,
+        "auc": 0.716,
+        "brier": 0.1108,
+        "oe": 1.0,
+        "oe_lo": 0.9746,
+        "oe_hi": 1.0261,
+        "citl": 0.0,
+        "slope": 1.0,
+        "interval_method": "patient-level percentile bootstrap (AUC, CITL, slope); Poisson (O:E)",
+        "auc_lo": 0.7093,
+        "auc_hi": 0.7226,
+        "slope_lo": 0.9617,
+        "slope_hi": 1.0377,
+        "citl_lo": -0.0274,
+        "citl_hi": 0.0297,
+        "bootstrap_replicates": 1000
+      }
+    },
+    "nwicu": {
+      "n": 8944,
+      "deaths": 1147,
+      "local_OR": {
+        "n": 8944,
+        "term": "fi10",
+        "OR": 1.476,
+        "lo": 1.426,
+        "hi": 1.527,
+        "p": 0.0,
+        "auc_apparent": 0.7092,
+        "se_type": "cluster-robust"
+      },
+      "frozen": {
+        "n": 8944,
+        "deaths": 1147,
+        "auc": 0.7087,
+        "brier": 0.1045,
+        "oe": 1.1782,
+        "oe_lo": 1.112,
+        "oe_hi": 1.2484,
+        "citl": 0.1997,
+        "slope": 0.9797,
+        "interval_method": "patient-level percentile bootstrap (AUC, CITL, slope); Poisson (O:E)",
+        "auc_lo": 0.6924,
+        "auc_hi": 0.7253,
+        "slope_lo": 0.888,
+        "slope_hi": 1.07,
+        "citl_lo": 0.1317,
+        "citl_hi": 0.268,
+        "bootstrap_replicates": 1000
+      }
+    },
+    "eicu": {
+      "n": 39091,
+      "deaths": 4618,
+      "local_OR": {
+        "n": 39091,
+        "term": "fi10",
+        "OR": 1.525,
+        "lo": 1.497,
+        "hi": 1.552,
+        "p": 0.0,
+        "auc_apparent": 0.7135,
+        "se_type": "cluster-robust"
+      },
+      "frozen": {
+        "n": 39091,
+        "deaths": 4618,
+        "auc": 0.7135,
+        "brier": 0.0968,
+        "oe": 1.0655,
+        "oe_lo": 1.0352,
+        "oe_hi": 1.0967,
+        "citl": 0.0762,
+        "slope": 1.0763,
+        "interval_method": "patient-level percentile bootstrap (AUC, CITL, slope); Poisson (O:E)",
+        "auc_lo": 0.7056,
+        "auc_hi": 0.7212,
+        "slope_lo": 1.0317,
+        "slope_hi": 1.1195,
+        "citl_lo": 0.0436,
+        "citl_hi": 0.1066,
+        "bootstrap_replicates": 1000
+      }
+    },
+    "mimic_coefficients": {
+      "Intercept": -5.795889,
+      "fi10": 0.388954,
+      "age": 0.025193,
+      "male": 0.006617
+    }
+  },
+  "eicu_apache": {
+    "age_sex_APACHEIV": {
+      "n": 47833,
+      "deaths": 6128,
+      "fi10_OR": {
+        "n": 47833,
+        "term": "fi10",
+        "OR": 1.298,
+        "lo": 1.271,
+        "hi": 1.326,
+        "p": 0.0,
+        "auc_apparent": 0.8003,
+        "se_type": "cluster-robust"
+      },
+      "auc_base": 0.7916,
+      "auc_full": 0.8003,
+      "delta_auc": {
+        "delta_auc": 0.0087,
+        "delta_auc_lo": 0.0063,
+        "delta_auc_hi": 0.0114
+      },
+      "model_full": "died ~ fi10 + age + male + apache",
+      "model_base": "died ~ age + male + apache"
+    },
+    "sex_APACHEIV_no_age": {
+      "n": 47833,
+      "deaths": 6128,
+      "fi10_OR": {
+        "n": 47833,
+        "term": "fi10",
+        "OR": 1.288,
+        "lo": 1.262,
+        "hi": 1.316,
+        "p": 0.0,
+        "auc_apparent": 0.799,
+        "se_type": "cluster-robust"
+      },
+      "auc_base": 0.7912,
+      "auc_full": 0.799,
+      "delta_auc": {
+        "delta_auc": 0.0078,
+        "delta_auc_lo": 0.0053,
+        "delta_auc_hi": 0.0102
+      },
+      "model_full": "died ~ fi10 + male + apache",
+      "model_base": "died ~ male + apache"
+    },
+    "age_sex_acute_physiology": {
+      "n": 47833,
+      "deaths": 6128,
+      "fi10_OR": {
+        "n": 47833,
+        "term": "fi10",
+        "OR": 1.302,
+        "lo": 1.275,
+        "hi": 1.329,
+        "p": 0.0,
+        "auc_apparent": 0.8007,
+        "se_type": "cluster-robust"
+      },
+      "auc_base": 0.7903,
+      "auc_full": 0.8007,
+      "delta_auc": {
+        "delta_auc": 0.0104,
+        "delta_auc_lo": 0.0081,
+        "delta_auc_hi": 0.0132
+      },
+      "model_full": "died ~ fi10 + age + male + apsiii",
+      "model_base": "died ~ age + male + apsiii"
+    }
+  }
+}

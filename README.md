@@ -14,7 +14,10 @@ The study asks two separate questions, and answers them separately:
 Discrimination transported moderately well (AUC 0.714 in NWICU, 0.736 in eICU). Calibration
 did not transport unmodified (observed-to-expected ratio 1.17 and calibration-in-the-large
 0.20 in NWICU). We report both results as they are; the code here reproduces every number,
-table and figure in the manuscript.
+table and figure in the manuscript. Version v2.0.0 adds the R2 revision analyses: a 24 h
+landmark, a uniform 0-24 h laboratory window, a harmonized 14-item panel, testing-intensity
+adjustment, patient-level bootstrap intervals for calibration, and optimism correction by
+full-model refitting.
 
 ## Repository layout
 
@@ -41,9 +44,11 @@ to `analysis/`, `cohort/` and `filab/` (all gitignored).
 | 7. Revision analyses | `revision_analysis.py`, `_revision_ext.py`, `_revision_tables.py`, `table2_auc_ci.py`, `_rev5_tables.py`, `_extended_30d.py` | Calibration (slope, CITL, O:E with Poisson CI), bootstrap AUC, DCA, cluster-robust SE |
 | 8. Database audits | `_db_*.py`, `_rev7_*.py`, `_rev8_s6b.py`, `_frozen_coef_table.py` | ARD code contamination check, NWICU death-date audit, 14-item harmonized panel, early-death sensitivity, per-laboratory missingness |
 | 9. ARD sensitivity (superseded) | `_recompute_nonard*.py`, `_recompute_rev2_*.py` | Full recomputation on an ARD-excluded cohort. Kept for transparency; **not** the analysis reported in the manuscript |
+| 10. R2 frozen revision pipeline | `rev_common.py`, `stage1_testing_intensity.py`, `stage2_window_0_24h.py`, `stage3_landmark.py`, `stage4_optimism_calibration.py`, `stage7_common_sample.py` | Testing intensity and 14/14 panel, uniform 0-24 h window, 24 h landmark, bootstrap optimism correction, shared harmonized-panel sample. All paths are derived from `__file__`; no drive letter or username is embedded |
 
 Scripts whose names start with `_` are the revision-stage analyses, run in the order of the
-manuscript's revision history. The final numbers come from stage 7–8.
+manuscript's revision history. The final numbers come from stage 7–8 and from the frozen R2
+pipeline in stage 10.
 
 ### results/ — aggregate tables
 
@@ -57,6 +62,7 @@ manuscript's revision history. The final numbers come from stage 7–8.
 | `sens_lowmissing_*.csv` | Supplementary tables S6–S7 (restricted and 14-item panels) |
 | `ard_subgroup_performance.csv`, `rev2_ard_analysis.csv`, `ard_icd_codes.csv` | Supplementary ARD analyses (code contamination audit) |
 | `attrition_counts.csv` | Figure 1 (flow diagram) |
+| `revision/stage*_results.json` | Frozen R2 stage outputs (all estimates are cohort-level aggregates; no patient rows) |
 | `_root/*` (`results/`) | 30-day and readmission outcomes, era/COVID/subtype sensitivity |
 
 Every file in `results/` is a decile-, threshold- or model-level summary. No row corresponds
@@ -81,7 +87,8 @@ and `eicu_crd`. NWICU tables are referenced as `nwicu.*`, `icu.*` and `hosp.*`.
 ```bash
 python -m pip install -r requirements.txt
 
-export FILAB_DB_HOST=localhost      # default 127.0.0.1export FILAB_DB_PORT=5432
+export FILAB_DB_HOST=localhost
+export FILAB_DB_PORT=5432
 export FILAB_DB_USER=postgres
 export FILAB_DB_PASSWORD=           # no default, must be set
 
@@ -92,6 +99,10 @@ python build_outcomes.py
 python _augment_severity.py
 python build_analysis.py            # writes ../analysis/
 ```
+
+The frozen R2 stage scripts in `code/` require the derived analysis CSVs from the original
+pipeline and read the PostgreSQL password from `MIMIC_PG_PASSWORD`, never from a file. All
+output paths are derived from the script location.
 
 Output directories (`cohort/`, `filab/`, `analysis/`, `figures/`) are created on import and
 are gitignored.
@@ -131,9 +142,11 @@ statsmodels 0.14, scikit-learn 1.4, scipy 1.11, matplotlib 3.8.
 
 ## Citation
 
-If you use this code, please cite the article (DOI to be added on publication) and the archived
-release of this repository. The concept DOI resolves to the latest version; each release has
-its own version DOI.
+If you use this code, please cite the article and the archived release of this repository.
+The concept DOI resolves to the latest version; each release has its own version DOI. The
+version-specific DOI for v2.0.0 is inserted in the manuscript's Data availability statement
+once Zenodo publishes the release. This README is a living document; the archived state of
+each version is frozen in its Git tag and Zenodo record.
 
 ## License
 
