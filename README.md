@@ -144,9 +144,9 @@ statsmodels 0.14, scikit-learn 1.4, scipy 1.11, matplotlib 3.8.
 
 If you use this code, please cite the article and the archived release of this repository.
 The concept DOI resolves to the latest version; each release has its own version DOI. The
-version-specific DOI for v2.0.0 is inserted in the manuscript's Data availability statement
-once Zenodo publishes the release. This README is a living document; the archived state of
-each version is frozen in its Git tag and Zenodo record.
+version-specific DOI for v2.0.0 is https://doi.org/10.5281/zenodo.24577585, also cited in
+the manuscript's Data availability statement. This README is a living document; the archived
+state of each version is frozen in its Git tag and Zenodo record.
 
 ## License
 
